@@ -10,7 +10,7 @@
 
 // Your code:
 export const volumeOfBox = (obj) => {
-
+    return obj.width * obj.length * obj.height;
 };
   
 // 2 ----
@@ -20,7 +20,7 @@ export const volumeOfBox = (obj) => {
 
 // Your code:
 export const personObject = (firstname, lastname, age) => {
-
+    return { firstname, lastname, age, yearOrBirth: (new Date().getFullYear() - age) };
 
 };
 
@@ -35,7 +35,11 @@ export const personObject = (firstname, lastname, age) => {
 
 //Your code:
 export const getBudgets = (persons) => {
-
+    let sum = 0;
+    persons.forEach(element => {
+        sum += element.budget;
+    });
+    return sum;
 };
 
 // 4 ----
@@ -47,5 +51,5 @@ export const getBudgets = (persons) => {
 // Your code:
 export const sortVehiclesByPrice = (vehicles) => {
   
-
+    return vehicles.sort((a,b) => a.price > b.price);
 };
