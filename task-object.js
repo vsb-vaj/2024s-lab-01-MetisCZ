@@ -51,5 +51,5 @@ export const getBudgets = (persons) => {
 // Your code:
 export const sortVehiclesByPrice = (vehicles) => {
   
-    return vehicles.sort((a,b) => a.price > b.price);
+    return vehicles.sort((a,b) => a.price - b.price);
 };

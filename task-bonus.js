@@ -8,8 +8,13 @@
 
 // Your code:
 export const drawTriangle = (length = 5) => {
-  
-    // ... write code ...
+    for(let i=1; i <= length; i++) {
+      let line = "*";
+      for(let j=2; j <= i; j++) {
+        line += " *";
+      }
+      console.log(line)
+    }
 };
 
 // 2#  ========== BONUS =======================
@@ -28,7 +33,13 @@ export const drawTriangle = (length = 5) => {
 
 // Your code:
 export const drawJavascriptWord = (word = "javascript") => {
-  // ... write code ...
+  for (let i=word.length-1; i >= -1; i--) {
+    let res = "";
+    for (let j=0; j < word.length; j++) {
+      res += j <= i ? "* " : word[j].toUpperCase() + " ";
+    }
+    console.log(res);
+  }
 };
 
 
@@ -48,5 +59,8 @@ export const drawJavascriptWord = (word = "javascript") => {
 
 // Your code:
 export const getVehiclesAndTopSpeed = (vehicles) => {
-  
+  return vehicles.map(vehicle => {
+    const topSpeed = Math.max(...vehicle.measuredSpeeds);
+    return { name: vehicle.name, topSpeed };
+  });
 };
